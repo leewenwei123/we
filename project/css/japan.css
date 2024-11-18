@@ -1,0 +1,512 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
+body {
+    background: url(../img/japan/background01.jpg) no-repeat fixed center center / cover;
+    background-color: rgba(0, 0, 0, 0.7); /* 调整透明度为 0.7 */
+    font-family: 'Noto Sans JP', 'Noto Serif SC', 'Noto Sans TC', sans-serif, 'cwTeXFangSong', serif;
+    margin: 0;
+    overflow-y: auto; /* 允许垂直滚动，以便在内容变高时可以滚动 */
+    padding: 0;
+    width: 100%;
+    height: 3500px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 遮罩颜色及透明度 */
+    z-index: -1; /* 将伪元素放置在内容之后 */
+}
+
+
+
+.nav {
+  position: relative;
+  width: 100%; 
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-width: 100%; /* 確保影片寬度填滿 */
+  min-height: 100%; /* 確保影片高度填滿 */
+  z-index: -1;
+  overflow: hidden;
+  object-fit: contain; /* 讓影片保持比例不裁切 */
+  background-color: black; /* 給背景加個顏色，避免比例不一致時出現空白 */
+}
+
+ul.drop-down-menu {
+    position: absolute;
+    top: 0;
+    right: 0; 
+    z-index: 1000; 
+    
+}
+
+ul { /* 取消ul預設的內縮及樣式 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ul.drop-down-menu {
+    border: #ccc 1px solid;
+    display: inline-block;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 13px;
+} */
+
+ul.drop-down-menu li {
+    position: relative;
+    white-space: nowrap;
+    border-right: #ccc 1px solid;
+}
+
+ul.drop-down-menu > li:last-child {
+    border-right: none;
+}
+
+ul.drop-down-menu > li {
+    float: left; /* 只有第一層是靠左對齊*/
+}
+
+ ul.drop-down-menu a {
+    
+    color: #ffffff;
+    display: block;
+    padding: 0 30px;
+    text-decoration: none;
+    line-height: 40px;
+    
+
+}
+
+
+
+
+.timer-container {
+	text-align: center;
+  width: 50%;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	box-shadow: 0 0 30px rgba(196, 197, 197, 0.6);
+	border: 1px solid rgba(223, 223, 223, 0.3);
+	backdrop-filter: blur(10px);
+  margin: 0 auto;
+  
+}
+
+h1 {
+	font-size: 2.5rem;
+	letter-spacing: 5px;
+	color: #e5e5e5;
+	text-shadow: 0 0 15px #e5e5e5, 0 0 30px #d2d2d2;
+	margin-bottom: 30px;
+}
+
+#countdown {
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 0;
+}
+
+.time-section {
+	margin: 0 15px;
+	text-align: center;
+}
+
+.time {
+	font-size: 4rem;
+	color: #e5e5e5;
+	text-shadow: 0 0 15px #e5e5e5, 0 0 30px #d2d2d2;
+	display: block;
+	margin-bottom: 5px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.time:hover {
+	transform: scale(1.2);
+	text-shadow: 0 0 30px #b5b9b9, 0 0 60px #d3d3d3;
+}
+
+.label {
+	font-size: 1.2rem;
+	color: #888c8c;
+	letter-spacing: 2px;
+}
+
+#message {
+	font-size: 1.5rem;
+	margin-top: 20px;
+	color: #ff0066;
+	text-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
+	visibility: hidden;
+}
+
+/* Neon glow animation */
+@keyframes neon-flicker {
+	0%,
+	19%,
+	21%,
+	23%,
+	25%,
+	54%,
+	56%,
+	100% {
+		text-shadow: 0 0 10px #a5a5a5, 0 0 20px #bababa;
+	}
+	20%,
+	24%,
+	55% {
+		text-shadow: none;
+	}
+}
+
+.time,
+.label {
+	animation: neon-flicker 1.5s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 上面是導覽列第一層 */
+
+ul.drop-down-menu ul {
+    /* border: #ccc 1px solid; */
+    position: absolute;
+    z-index: 99;
+    left: -1px;
+    top: 100%;
+   min-width: 250px;
+}
+
+ul.drop-down-menu ul li {
+    border-bottom: #ccc 1px solid;
+}
+
+ul.drop-down-menu ul li:last-child {
+    border-bottom: none;
+}
+
+ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+    z-index: 999;
+    top: 10px;
+    left: 90%;
+}
+
+ul.drop-down-menu ul { /*隱藏次選單*/
+    display: none;
+}
+
+ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+    display: block;
+}
+
+nav {
+position: relative;
+padding-bottom: 12px;
+}
+
+nav ul {
+padding: 0;
+margin: 0;
+list-style: none;
+display: flex;
+}
+
+nav ul li {
+margin: 0 40px 0 0;
+position: relative;
+transition: all 0.9s ease;
+font-size: 20px; /* 放大字体 */
+font-weight: 700; /* 加粗字体 */
+}
+
+
+nav ul li:hover {
+opacity: .7;
+}
+
+nav ul li:hover a {
+font-size: 21px; /* 放大字体 */
+font-weight: 900; /* 加粗字体 */
+}
+
+nav ul li:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background: #ffffff;
+transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li:hover:after {
+width: 100%;
+left: 0;
+}
+
+nav ul li.active:after {
+width: 100%;
+left: 0;
+}
+
+/* 上面是導覽列 */
+
+.text {
+    text-align: center; /* 水平居中 */
+    padding-top: 100px;
+}
+
+.text img {
+    display: block; /* 将图像设置为块级元素 */
+    margin: 0 auto; /* 设置左右外边距为自动，实现水平居中 */
+    padding-bottom: 50px;
+}
+/* 上面是標題 */
+
+/* 下面是box1 */
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 5% 20% 5% 20%;
+}
+
+.box > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left img {
+    border-radius: 50%; /* 将图片设置为圆形 */
+    box-shadow: 0 40px 80px rgba(197, 45, 45, 0.1); /* 添加阴影 */
+    margin-right: 20px;
+    width: 200px; /* 假设图片的宽度为100px */
+    height: 200px; /* 假设图片的高度为100px */
+    object-fit: cover; /* 确保图片填充整个圆形区域 */
+}
+
+
+.box h4{
+    font-size: 25px;
+    color: #ffffff; /* 设置文字为白色 */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 添加黑色描边 */
+    padding: 20px ;
+}
+
+.box p {
+    font-size: 18px;
+    color: #ffffff; /* 设置文字为白色 */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 添加黑色描边 */
+    padding: 40px 20px; /* 上下各 40px，左右各 20px 的内边距 */
+    line-height: 2; /* 设置行高为两倍 */
+    text-indent: 2em; /* 首行缩进为两个空格 */
+}
+
+/* 上面是怪物介紹 */
+
+  
+
+  
+  #bridge {
+    display: block;
+    margin: 0 auto;
+    background-image: url("../img/japan/aaaa.png");
+    background-image: -webkit-image-set(url("../img/japan/aaaa.png") 1x, url("../img/japan/aaaa.png") 2x);
+    background-size: cover;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    cursor: crosshair;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/circular-cursor.png) 53 53, crosshair;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
+  }
+  
+  #bridgeContainer {
+    text-align: center;
+    font-family: Avenir, sans-serif;
+  }
+  
+  #bridgeContainer figcaption {
+    margin-top: 2rem;
+  }
+  .box2 p {
+    font-size: 25px;
+    color: #ffffff; /* 设置文字为白色 */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 添加黑色描边 */
+    padding: 20px;
+    width: 800px;
+    line-height: 1.5; /* 设置行高为 1.5 */
+    text-align: center; /* 文字水平置中 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+/* 上面是照片抹去 */
+
+* {
+    box-sizing: border-box;
+  }
+  *::before, *::after {
+    box-sizing: border-box;
+  }
+
+.container {
+    margin: 0 auto;
+    padding: 4rem;
+    width: 48rem;
+  }
+
+  .box3 .container h2{
+    color: #ffffff;
+    font-size: 2.15rem;
+    font-weight: bold; 
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+    padding-bottom: 50px;
+  }
+  
+  .accordion .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .accordion .accordion-item button[aria-expanded=true] {
+    border-bottom: 3px solid #ffffff;
+  }
+  .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: bold; 
+    border: none;
+    background: none;
+    outline: none;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; 
+}
+
+
+  .accordion button:hover, .accordion button:focus {
+    cursor: pointer;
+    color: #ffffff;
+  }
+  .accordion button:hover::after, .accordion button:focus::after {
+    cursor: pointer;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+  .accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+  }
+  .accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+  .accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+  }
+  .accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+  .accordion button[aria-expanded=true] {
+    color: beige;
+  }
+  .accordion button[aria-expanded=true] .icon::after {
+    width: 0;
+  }
+  .accordion button[aria-expanded=true] + .accordion-content {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+    color: beige;
+    line-height: 1.5;
+  }
+
+  /* 上面是手風琴 */
+
+  .site-footer {
+    background-color: #0e0d0d;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-left {
+    flex: 1;
+  }
+  
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+  
+.icon img{
+    margin: 0 10px;
+
+}
+

@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Serif+SC:wght@300;400;500;600;700;900&display=swap');
+@import url(./reset.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+
+
+body {
+    background: url(../img/JunjiIto/JunjiIto_background.jpg) no-repeat fixed center center / cover;
+    background-color: rgba(0, 0, 0, 0.5); /* 0.5 是黑色遮罩的透明度，你可以根据需要调整 */
+    font-family: 'Noto Sans JP', 'Noto Serif SC', sans-serif;
+    margin: 0 auto;
+    overflow-y: auto; /* 允许垂直滚动，以便在内容变高时可以滚动 */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 2000px;
+    font-family: 'Noto Sans TC',sans-serif !important;
+    font-family: ‘cwTeXFangSong’, serif;
+}
+
+ul.drop-down-menu {
+    position: absolute;
+    top: 0;
+    right: 0; 
+    z-index: 1000; 
+    
+}
+
+ul { /* 取消ul預設的內縮及樣式 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ul.drop-down-menu {
+    border: #ccc 1px solid;
+    display: inline-block;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 13px;
+} */
+
+ul.drop-down-menu li {
+    position: relative;
+    white-space: nowrap;
+    border-right: #ccc 1px solid;
+}
+
+ul.drop-down-menu > li:last-child {
+    border-right: none;
+}
+
+ul.drop-down-menu > li {
+    float: left; /* 只有第一層是靠左對齊*/
+}
+
+ ul.drop-down-menu a {
+    
+    color: #ffffff;
+    display: block;
+    padding: 0 30px;
+    text-decoration: none;
+    line-height: 40px;
+    
+
+}
+
+
+
+/* 上面是導覽列第一層 */
+
+ul.drop-down-menu ul {
+    /* border: #ccc 1px solid; */
+    position: absolute;
+    z-index: 99;
+    left: -1px;
+    top: 100%;
+   min-width: 250px;
+}
+
+ul.drop-down-menu ul li {
+    border-bottom: #ccc 1px solid;
+}
+
+ul.drop-down-menu ul li:last-child {
+    border-bottom: none;
+}
+
+ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+    z-index: 999;
+    top: 10px;
+    left: 90%;
+}
+
+ul.drop-down-menu ul { /*隱藏次選單*/
+    display: none;
+}
+
+ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+    display: block;
+}
+
+nav {
+position: relative;
+padding-bottom: 12px;
+}
+
+nav ul {
+padding: 0;
+margin: 0;
+list-style: none;
+display: flex;
+}
+
+nav ul li {
+margin: 0 40px 0 0;
+position: relative;
+transition: all 0.9s ease;
+font-size: 20px; /* 放大字体 */
+font-weight: 700; /* 加粗字体 */
+}
+
+
+nav ul li:hover {
+opacity: .7;
+}
+
+nav ul li:hover a {
+font-size: 21px; /* 放大字体 */
+font-weight: 900; /* 加粗字体 */
+}
+
+nav ul li:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background: #ffffff;
+transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li:hover:after {
+width: 100%;
+left: 0;
+}
+
+nav ul li.active:after {
+width: 100%;
+left: 0;
+}
+
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 200px;
+    padding-left: 100px;
+}
+
+.top_l{
+    flex: 1;
+    padding-right: 20px; /* 可以根據需要調整左側圖片與文字之間的距離 */
+    position: relative;
+    width: 25vw; /* 將圖片大小設置為螢幕寬度的25% */
+    height: auto; /* 保持高度自動調整 */
+}
+.top_l img{
+    width: 70%; /* 讓圖片填滿父元素 */
+    display: block; /* 使圖片置中 */
+    margin: 0 auto; /* 水平置中 */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* 添加白色陰影效果 */
+}
+
+.top_r{
+    flex: 1;
+}
+
+.top_r img{
+    width: 80%; 
+    display: block;
+    margin: 0 auto; 
+    padding-right: 100px;
+    
+}
+
+.top_r h2 {
+    font-size: 24px; /* 調整標題的字體大小 */
+}
+
+.top_r p {
+        padding: 50px 0px;
+    font-size: 18px; /* 調整文字內容的字體大小 */
+        width: 600px; /* 設置寬度 */
+        word-wrap: break-word; /* 控制文字斷行行為，即使沒有空格也會斷行 */
+        overflow-wrap: break-word; /* 當單詞長度超過容器寬度時，同樣斷行 */
+        line-height: 2.5; /* 設置行高 */
+        color: white; /* 設置文字顏色 */
+        text-shadow: 3px 1px 2px black; /* 設置文字描邊 */
+        font-weight: bold;
+}
+
+
+/* 上面是TOP */
+
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    width: 80%;
+    height: 900px;
+  }
+  
+  .timeline-item {
+    display: none;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #000000;
+    margin-bottom: 20px;
+    width: 45%;
+    color: aliceblue;
+    line-height: 1.5;
+    font-size: 16px;
+        color: white; /* 設置文字顏色 */
+        text-shadow: 3px 1px 2px black; /* 設置文字描邊 */
+        font-weight: bold;
+  }
+  .timeline-item p{
+    padding-bottom: 20px;
+  }
+  
+  .timeline-item.left {
+    float: left;
+    clear: both;
+    margin-right: 5%;
+  }
+  
+  .timeline-item.right {
+    float: right;
+    clear: both;
+    margin-left: 5%;
+  }
+  
+  .timeline-item.active {
+    display: block;
+  }
+  
+  .timeline-line {
+    position: fixed;
+    top: -100%; /* 設置初始位置在網頁上方 */
+    bottom: 0;
+    left: 49%;
+    width: 50px; /* 虛線的寬度 */
+    background-image: url(../img/JunjiIto/footprint02.png); /* 設置背景圖片 */
+    background-repeat: repeat-y; /* 垂直重複 */
+    background-size: contain; /* 調整背景圖片大小以完整顯示 */
+    background-position: center 100px; /* 調整背景圖片的位置，增加上下間距為100px */
+    filter: drop-shadow(0 0 10px rgb(228, 30, 30)); /* 添加白色陰影效果 */
+    z-index: -1;
+    opacity: 0; /* 初始設置為透明 */
+    transition: opacity 1s ease, top 1s ease; /* 添加過渡效果 */
+}
+
+
+
+
+
+.show-timeline-line {
+    opacity: 1; /* 滾動時顯示線 */
+}
+
+  
+  
+  .timeline-item.active.left::before {
+    transform: translateX(-100%);
+  }
+  
+  .timeline-item.active.right::before {
+    transform: translateX(100%);
+  }
+  
+
+
+
+  /* 下面是輪播 */
+  *, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
+  
+  .cont {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    padding: 80px 70px;
+    max-width: 100%;
+    background-image: url(../img/JunjiIto/JunjiIto_background_4.jpg);
+    
+  }
+
+  .cont__inner {
+    position: relative;
+    height: 100%;
+  }
+  .cont__inner:hover .el__bg:after {
+    opacity: 1;
+  }
+  
+  .el {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 19.2%;
+    height: 100%;
+    background: #252525;
+    transition: transform 0.6s 0.7s, width 0.7s, opacity 0.6s 0.7s, z-index 0s 1.3s;
+    will-change: transform, width, opacity;
+  }
+  .el:not(.s--active) {
+    cursor: pointer;
+  }
+  .el__overflow {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+  .el__inner {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    transition: transform 1s;
+  }
+  .cont.s--inactive .el__inner {
+    transform: translate3d(0, 100%, 0);
+  }
+  .el__bg {
+    position: relative;
+    width: calc(100vw - 140px);
+    height: 100%;
+    transition: transform 0.6s 0.7s;
+    will-change: transform;
+  }
+  .el__bg:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -5%;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: center center;
+    transition: transform 1s;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  .cont.s--inactive .el__bg:before {
+    transform: translate3d(0, -100%, 0) scale(1.2);
+  }
+  .el.s--active .el__bg:before {
+    transition: transform 0.8s;
+  }
+  .el__bg:after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .cont.s--el-active .el__bg:after {
+    transition: opacity 0.5s 1.4s;
+    opacity: 1 !important;
+  }
+  .el__preview-cont {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 1.2s;
+  }
+  .cont.s--inactive .el__preview-cont {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .cont.s--el-active .el__preview-cont {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s;
+  }
+  .el__heading {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #000000;
+    text-shadow: 2px 2px 0 white, -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white; /* 白色陰影，四個方向各偏移2px */
+    font-weight: bold; /* 粗體字 */
+  }
+  .el__content {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.1s;
+  }
+  .el.s--active .el__content {
+    z-index: 2;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5s 1.4s;
+  }
+  .el__text {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #000000;
+    text-shadow: 2px 2px 0 white, -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white; /* 白色陰影，四個方向各偏移2px */
+    font-weight: bold; /* 粗體字 */
+    padding-right: 30px;
+  }
+  .el__close-btn {
+    z-index: -1;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0s 0.45s;
+    cursor: pointer;
+  }
+  .el.s--active .el__close-btn {
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0s 1.4s;
+  }
+  .el__close-btn:before, .el__close-btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 8px;
+    margin-top: -4px;
+    background: #fff;
+    opacity: 0;
+    transition: opacity 0s;
+  }
+  .el.s--active .el__close-btn:before, .el.s--active .el__close-btn:after {
+    opacity: 1;
+  }
+  .el__close-btn:before {
+    transform: rotate(45deg) translateX(100%);
+  }
+  .el.s--active .el__close-btn:before {
+    transition: all 0.3s 1.4s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+    transform: rotate(45deg) translateX(0);
+  }
+  .el__close-btn:after {
+    transform: rotate(-45deg) translateX(100%);
+  }
+  .el.s--active .el__close-btn:after {
+    transition: all 0.3s 1.55s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+    transform: rotate(-45deg) translateX(0);
+  }
+  .el__index {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: -10px; /* 負值較小，文字會向上移動 */
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    text-align: center;
+    font-size: 4vw;
+    line-height: 0.85;
+    font-weight: bold;
+    transition: transform 0.5s, opacity 0.3s 1.4s;
+    transform: translate3d(0, 1vw, 0);
+}
+
+  .el:hover .el__index {
+    transform: translate3d(0, 0, 0);
+  }
+  .cont.s--el-active .el__index {
+    transition: transform 0.5s, opacity 0.3s;
+    opacity: 0;
+  }
+  .el__index-back, .el__index-front {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .el__index-back {
+    color: #2f3840;
+    opacity: 0;
+    transition: opacity 0.25s 0.25s;
+  }
+  .el:hover .el__index-back {
+    transition: opacity 0.25s;
+    opacity: 1;
+  }
+  .el__index-overlay {
+    overflow: hidden;
+    position: relative;
+    transform: translate3d(0, 100%, 0);
+    transition: transform 0.5s 0.1s;
+    color: transparent;
+  }
+  .el__index-overlay:before {
+    content: attr(data-index);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.5s 0.1s;
+  }
+  .el:hover .el__index-overlay {
+    transform: translate3d(0, 0, 0);
+  }
+  .el:hover .el__index-overlay:before {
+    transform: translate3d(0, 0, 0);
+  }
+  .el:nth-child(1) {
+    transform: translate3d(0%, 0, 0);
+    transform-origin: 50% 50%;
+  }
+  .cont.s--el-active .el:nth-child(1):not(.s--active) {
+    transform: scale(0.5) translate3d(0%, 0, 0);
+    opacity: 0;
+    transition: transform 0.95s, opacity 0.95s;
+  }
+  .el:nth-child(1) .el__inner {
+    transition-delay: 0s;
+  }
+  .el:nth-child(1) .el__bg {
+    transform: translate3d(0%, 0, 0);
+  }
+  .el:nth-child(1) .el__bg:before {
+    transition-delay: 0s;
+    background-image: url("../img/JunjiIto/figure01.jpg");
+  }
+  .el:nth-child(2) {
+    transform: translate3d(105.2083333333%, 0, 0);
+    transform-origin: 155.2083333333% 50%;
+  }
+  .cont.s--el-active .el:nth-child(2):not(.s--active) {
+    transform: scale(0.5) translate3d(105.2083333333%, 0, 0);
+    opacity: 0;
+    transition: transform 0.95s, opacity 0.95s;
+  }
+  .el:nth-child(2) .el__inner {
+    transition-delay: 0.1s;
+  }
+  .el:nth-child(2) .el__bg {
+    transform: translate3d(-19.2%, 0, 0);
+  }
+  .el:nth-child(2) .el__bg:before {
+    transition-delay: 0.1s;
+    background-image: url("../img/JunjiIto/figure02.jpg");
+  }
+  .el:nth-child(3) {
+    transform: translate3d(210.4166666667%, 0, 0);
+    transform-origin: 260.4166666667% 50%;
+  }
+  .cont.s--el-active .el:nth-child(3):not(.s--active) {
+    transform: scale(0.5) translate3d(210.4166666667%, 0, 0);
+    opacity: 0;
+    transition: transform 0.95s, opacity 0.95s;
+  }
+  .el:nth-child(3) .el__inner {
+    transition-delay: 0.2s;
+  }
+  .el:nth-child(3) .el__bg {
+    transform: translate3d(-38.4%, 0, 0);
+  }
+  .el:nth-child(3) .el__bg:before {
+    transition-delay: 0.2s;
+    background-image: url("../img/JunjiIto/figure03.jpg");
+  }
+  .el:nth-child(4) {
+    transform: translate3d(315.625%, 0, 0);
+    transform-origin: 365.625% 50%;
+  }
+  .cont.s--el-active .el:nth-child(4):not(.s--active) {
+    transform: scale(0.5) translate3d(315.625%, 0, 0);
+    opacity: 0;
+    transition: transform 0.95s, opacity 0.95s;
+  }
+  .el:nth-child(4) .el__inner {
+    transition-delay: 0.3s;
+  }
+  .el:nth-child(4) .el__bg {
+    transform: translate3d(-57.6%, 0, 0);
+  }
+  .el:nth-child(4) .el__bg:before {
+    transition-delay: 0.3s;
+    background-image: url("../img/JunjiIto/figure04.jpg");
+  }
+  .el:nth-child(5) {
+    transform: translate3d(420.8333333333%, 0, 0);
+    transform-origin: 470.8333333333% 50%;
+  }
+  .cont.s--el-active .el:nth-child(5):not(.s--active) {
+    transform: scale(0.5) translate3d(420.8333333333%, 0, 0);
+    opacity: 0;
+    transition: transform 0.95s, opacity 0.95s;
+  }
+  .el:nth-child(5) .el__inner {
+    transition-delay: 0.4s;
+  }
+  .el:nth-child(5) .el__bg {
+    transform: translate3d(-76.8%, 0, 0);
+  }
+  .el:nth-child(5) .el__bg:before {
+    transition-delay: 0.4s;
+    background-image: url("../img/JunjiIto/figure05.png");
+  }
+  .el:hover .el__bg:after {
+    opacity: 0;
+  }
+  .el.s--active {
+    z-index: 1;
+    width: 100%;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.6s, width 0.7s 0.7s, z-index 0s;
+  }
+  .el.s--active .el__bg {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.6s;
+  }
+  .el.s--active .el__bg:before {
+    transition-delay: 0.6s;
+    transform: scale(1.1);
+  }
+  
+  .icon-link {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 32px;
+  }
+  .icon-link img {
+    width: 100%;
+    vertical-align: top;
+  }
+  .icon-link--twitter {
+    left: auto;
+    right: 5px;
+  }
+  
+
+  /* 下面是room */
+  .room {
+    background-image: url(../img/JunjiIto/JunjiIto_background_2.jpg);
+    background-size: cover; 
+    padding: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; /* 寬度100% */
+    height: 100vh; /* 視窗高度100vh */
+}
+
+
+
+.room{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+.room img {
+    width: 400px;
+    height: 250px;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* 添加过渡效果 */
+}
+.room img:hover {
+    transform: scale(1.1); /* 滑鼠悬停时放大 10% */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* 添加白色阴影 */
+    filter: brightness(110%); /* 增加亮度为 110% */
+}
+
+
+.room.text {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+.room .text h4 {
+    text-align: center; /* 文字水平置中 */
+    margin: 20px 0; /* 上下间距为 20px，左右间距为 0 */
+    font-size: 25px; /* 字体大小为 20像素 */
+    color: rgb(238, 228, 228); /* 文字颜色为白色 */
+    font-weight: bold; /* 粗体 */
+    text-shadow: -1px -1px 0 black,  
+                  1px -1px 0 black,
+                 -1px 1px 0 black,
+                  1px 1px 0 black; /* 添加黑色描边 */
+}
+
+
+.room .text li {
+    text-align: left; /* 左对齐 */
+    margin: 10px 0; /* 上下间距为 5px，左右间距为 0 */
+    color: rgb(238, 228, 228); /* 字体颜色为白色 */
+    font-weight: bold; /* 粗体 */
+}
+
+.room_1,
+.room_2,
+.room_3 {
+    width: 500px;
+    height: 400px;
+}
+
+.site-footer {
+    background-color: #0e0d0d;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-left {
+    flex: 1;
+  }
+  
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+  
+.icon img{
+    margin: 0 10px;
+
+}

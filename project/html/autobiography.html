@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/autobiography.css">
+  <title>關於文暐</title>
+</head>
+<body>
+
+  <nav>     
+        
+    <ul class="drop-down-menu">
+        <li><a href="./index.html">首頁</a>
+        </li>
+        <li><a href="#">主題分類</a>
+            <ul>
+                <li><a href="../html/japan.html">屍蹤</a>
+                </li>
+                <li><a href="../html/candle.html">蠟燭</a>
+                </li>
+                <!-- <li><a href="#">富江</a> -->
+                </li>
+                <!-- <li><a href="#">伊藤潤二</a> -->
+                </li>
+            </ul>
+        </li>
+        <!-- <li><a href="#">最新消息</a> -->
+        </li> 
+        <li><a href="../html/autobiography.html">關於文暐</a>
+        </li>
+        
+    </ul>
+
+  </nav>
+  <!-- nav -->
+
+    <div class="top">
+        <!-- <img src="../img/autobiography/gif.gif" alt="Description of the image" style="width: 400px;"> -->
+        <div class="text-content">
+          <h1>李文暐</h1>
+          <div class="line-container">
+            <div class="circle"></div>
+            <div class="line"></div>
+          </div>
+          
+          <p>我在智冠做了什麼?</p>
+        </div>
+      </div>
+
+    <div class="timeline">
+      <!-- 固定在頁面中央的圓圈 -->
+      <div class="timeline-circle">
+        <div class="eyes">
+          <div>
+            <i></i>
+          </div>
+          <div>
+            <i></i>
+          </div>
+        </div>
+      </div>
+  
+      <div class="timeline-item left">
+        <div class="timeline-date"><img src="../img/autobiography/caticon.png" alt="" style="width: 50%;"></div>
+        <div class="timeline-content">
+          <h2>網站模組化</h2>
+          <p>官網後台改為版位上架，不僅提升了維護的便利、機動性，也讓使用體驗更加友好。協助後台模組設計時，以使用者角度出發，深入瞭解其目前遇到的痛點並進行改進，從而讓後續操作更加簡單流暢。</p>
+          <br>
+          <img src="../img/autobiography/module.png" alt="" style="width: 450px;">
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-date"><img src="../img/autobiography/caticon.png" alt="" style="width: 50%;"></div>
+        <div class="timeline-content">
+          <h2>企劃、設計、切版</h2>
+          <p>模擬使用者情境並融入公司吉祥物元素，以風趣且真實的畫面呈現，不僅協助消費者鎖卡，還能加深公司品牌在消費者心中的印象。</p>
+          <img src="../img/autobiography/locking.jpg" alt="" style="width: 450px;">
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-date"><img src="../img/autobiography/caticon.png" alt="" style="width: 50%;"></div>
+        <div class="timeline-content">
+          <h2>開發者後台與前台企劃、設計</h2>
+          <p>了解市場需求後，開發者平台成為主流，開發者可透過平台進行專案的上下架與維護，如雙平台或知名平台Xsolla，使串接不再依賴傳統的技術文件流程。在此專案中，擔任企劃與設計的角色。</p>
+          <br>
+          <img src="../img/autobiography/gif.gif" alt="" style="width: 450px;">
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-date"><img src="../img/autobiography/caticon.png" alt="" style="width: 50%;"></div>
+        <div class="timeline-content">
+          <h2>需求書撰寫</h2>
+          <p>風控設定若影響到非危險用戶的交易體驗，將可能造成巨大的損失。提出需求後，撰寫相關需求書，針對此功能設置「白名單」功能，使使用者單位不僅能進行風控，還能保障忠誠客戶的交易不受影響。</p>
+          <img src="../img/autobiography/whitelist.png" alt="" style="width: 450px;">
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-date"><img src="../img/autobiography/caticon.png" alt="" style="width: 50%;"></div>
+        <div class="timeline-content">
+          <h2>雙平台企劃、發想</h2>
+          <p>針對使用者的需求，優化使用者介面</p>
+          <p>APP小工具的左右拖曳，編輯的擴展性</p>
+          <img src="../img/autobiography/app_Adjustment.jpg" alt="" style="width: 450px;">
+        </div>
+      </div>
+     
+    </div>
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const items = document.querySelectorAll('.timeline-item');
+
+  // Function to check if timeline item is in the viewport
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
+    );
+  }
+
+  // Function to add 'visible' class when in viewport
+  function showTimelineItems() {
+    items.forEach(item => {
+      if (isInViewport(item)) {
+        item.classList.add('visible');
+      }
+    });
+  }
+
+  // Event listener for scrolling
+  window.addEventListener('scroll', showTimelineItems);
+  showTimelineItems(); // Initial check on load
+});
+document.addEventListener('mousemove', (e) => {
+  const eyesContainer = document.querySelector('.eyes');
+  const eyes = document.querySelectorAll('.eyes > div');
+  
+  if(!eyesContainer || eyes.length !== 2) return;
+  
+  const containerRect = eyesContainer.getBoundingClientRect();
+  const containerCenterX = containerRect.left + containerRect.width / 2;
+  const containerCenterY = containerRect.top + containerRect.height / 2;
+
+  const angle = Math.atan2(e.clientY - containerCenterY, e.clientX - containerCenterX);
+  const distance = Math.min(
+    eyes[0].offsetWidth / 4,
+    Math.sqrt(Math.pow(e.clientX - containerCenterX, 2) + Math.pow(e.clientY - containerCenterY, 2))
+  );
+
+  const moveX = Math.cos(angle) * distance;
+  const moveY = Math.sin(angle) * distance;
+  
+  eyes.forEach(eye => {
+    const eyeBall = eye.querySelector('i');
+    eyeBall.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+});
+
+
+  </script>
+</body>
+</html>
