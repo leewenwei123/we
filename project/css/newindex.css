@@ -4,7 +4,7 @@
 
 
 body {
-    background: url(../img/index/midbackround_1.jpg) no-repeat fixed center center / cover;
+    background: url(../img/index/mid_l/mid_l_8.jpg) no-repeat fixed center center / cover;
     background-color: rgba(0, 0, 0, 0.5); 
     font-family: 'Noto Sans JP', 'Noto Serif SC', sans-serif;
     margin: 0 auto;
@@ -278,7 +278,7 @@ nav a:hover {
 
   .text {
     width: 1000px; 
-    height: 600px; 
+    height: 400px; 
     text-align: center; 
     color: white; 
     padding: 20px;
@@ -287,7 +287,7 @@ nav a:hover {
     z-index: 1; 
     border-radius: 15px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(8, 7, 7, 0.5); 
 }
 
 .mid {
