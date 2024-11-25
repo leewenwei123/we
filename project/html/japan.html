@@ -10,35 +10,42 @@
 </head>
 <body>
     
-    <nav class="nav">
-        <video class="background-video" autoplay loop muted>
-            <source src="../img/japan/navmp5.mp4" type="video/mp4">
-            
-            
-        </video>
-        <ul class="drop-down-menu">
-          <li><a href="./index.html">首頁</a>
-          </li>
-          <li><a href="#">主題分類</a>
-              <ul>
-                  <li><a href="../html/japan.html">屍蹤</a>
-                  </li>
-                  <li><a href="../html/candle.html">蠟燭</a>
-                  </li>
-                  <!-- <li><a href="#">富江</a> -->
-                  </li>
-                  <!-- <li><a href="#">伊藤潤二</a> -->
-                  </li>
-              </ul>
-          </li>
-          <!-- <li><a href="#">最新消息</a> -->
-          </li> 
-          <li><a href="../html/autobiography.html">關於文暐</a>
-          </li>
-            
+  <nav class="nav">
+    <!-- 漢堡列 -->
+    <div class="hamburger-icon" id="hamburger-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  
+    <!-- 背景影片 -->
+    <video class="background-video" autoplay loop muted>
+      <source src="../img/japan/navmp5.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+
+    <div class="gif-container">
+      <img src="../img/japan/bbbb.gif" alt="GIF Image">
+    </div>
+  
+    <ul class="drop-down-menu" id="menu">
+      <li><a href="./index.html">首頁</a></li>
+      <li>
+        <a href="#">主題分類</a>
+        <ul>
+          <li><a href="../html/japan.html">屍蹤</a></li>
+          <li><a href="../html/candle.html">蠟燭</a></li>
         </ul>
-    </nav>
-<!-- 上面是導覽列 -->
+      </li>
+      <div class="flex-spacer"></div>
+      <li><a href="../html/autobiography.html">關於文暐</a></li>
+    </ul>
+    
+  </nav>
+  
+        
+          <!-- nav -->
 
 <div class="text">
 
@@ -313,7 +320,24 @@ const countdownFunction = setInterval(() => {
 
   
 </script>
+<script>
+// 選取元素
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const menu = document.getElementById('menu');
 
+// 漢堡列點擊事件
+hamburgerIcon.addEventListener('click', () => {
+  menu.classList.toggle('active'); // 切換選單的顯示狀態
+});
+
+// 點擊頁面其他地方關閉選單
+document.addEventListener('click', (event) => {
+  if (!menu.contains(event.target) && !hamburgerIcon.contains(event.target)) {
+    menu.classList.remove('active'); // 關閉選單
+  }
+});
+
+</script>
 
 </body>
 </html>

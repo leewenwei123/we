@@ -9,7 +9,7 @@ body {
     background-color: rgba(0, 0, 0, 10); /* 调整透明度为 0.7 */
     font-family: 'Noto Sans JP', 'Noto Serif SC', 'Noto Sans TC', sans-serif, 'cwTeXFangSong', serif;
     margin: 0;
-    overflow-y: auto; /* 允许垂直滚动，以便在内容变高时可以滚动 */
+    overflow-y: auto; 
     padding: 0;
     width: 100%;
     height: 2700px;
@@ -22,8 +22,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(19, 1, 1, 0.7); /* 遮罩颜色及透明度 */
-    z-index: -1; /* 将伪元素放置在内容之后 */
+    background-color: rgba(19, 1, 1, 0.7); 
 }
 
 
@@ -35,7 +34,7 @@ ul.drop-down-menu {
     
 }
 
-ul { /* 取消ul預設的內縮及樣式 */
+ul { 
     margin: 0;
     padding: 0;
     list-style: none;
@@ -59,7 +58,7 @@ ul.drop-down-menu > li:last-child {
 }
 
 ul.drop-down-menu > li {
-    float: left; /* 只有第一層是靠左對齊*/
+    float: left;
 }
 
  ul.drop-down-menu a {
@@ -94,17 +93,17 @@ ul.drop-down-menu ul li:last-child {
     border-bottom: none;
 }
 
-ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+ul.drop-down-menu ul ul { 
     z-index: 999;
     top: 10px;
     left: 90%;
 }
 
-ul.drop-down-menu ul { /*隱藏次選單*/
+ul.drop-down-menu ul { 
     display: none;
 }
 
-ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+ul.drop-down-menu li:hover > ul {
     display: block;
 }
 
@@ -124,8 +123,8 @@ nav ul li {
 margin: 0 40px 0 0;
 position: relative;
 transition: all 0.9s ease;
-font-size: 20px; /* 放大字体 */
-font-weight: 700; /* 加粗字体 */
+font-size: 20px; 
+font-weight: 700; 
 }
 
 
@@ -134,8 +133,8 @@ opacity: .7;
 }
 
 nav ul li:hover a {
-font-size: 21px; /* 放大字体 */
-font-weight: 900; /* 加粗字体 */
+font-size: 21px; 
+font-weight: 900; 
 }
 
 nav ul li:after {
@@ -165,7 +164,7 @@ left: 0;
   display: flex;
   height: 900px;
   background-color: #281907;
-  position: relative; /* 使得后面定位的元素相对于它来定位 */
+  position: relative; 
 }
 
 :root {
@@ -191,10 +190,10 @@ left: 0;
   background: url(../img/candle/enlarge_a.jpg) center center;
   background-size: cover;
   overflow: hidden;
-  animation: changeBackground 4s infinite alternate; /* 每4秒循環背景切換 */
+  animation: changeBackground 4s infinite alternate; 
 }
 
-/* 定義背景自動切換的動畫 */
+
 @keyframes changeBackground {
   0% {
     background-image: url('../img/candle/enlarge_a.jpg');
@@ -214,13 +213,13 @@ left: 0;
 /* 上面是TOP */
 .min {
     display: flex;
-    justify-content: center; /* 水平置中 */
+    justify-content: center; 
     height: 500px;
     width: 100%;
     /* background-image: url(../img/candle/midbackground.jpg); */
-    background-repeat: no-repeat; /* 背景不重复 */
-    background-size: cover; /* 保持原比例放大 */
-    margin: 0 auto; /* 水平居中 */
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    margin: 0 auto; 
     margin-top: 5%;
     justify-content: space-between;
     
@@ -228,37 +227,37 @@ left: 0;
 }
 
 .min_l {
-    flex: 1; /* 平均占用父元素的宽度 */
+    flex: 1; 
     display: flex;
-    align-items: center; /* 子元素垂直居中 */
-    justify-content: center; /* 子元素水平居中 */
+    align-items: center; 
+    justify-content: center; 
     padding: 350 0px;
 }
 
 .min_r {
   width: 50%;
-  height: 100px; /* 举例设置高度 */
-  background-color: lightgray; /* 举例设置背景颜色 */
+  height: 100px; 
+  background-color: lightgray; 
 }
   
  
   .min_l img{
     width: 300px;
     height: 400px;
-    object-fit: cover; /* 图像填充整个容器 */
+    object-fit: cover; 
    }
 
    
   
 :root {
-  /* colors */
+  
   --body-bg: #FAFAFA;
   --page-bg: #F5F5F5;
   --dark-text: #2A2935;
-  /* spacing */
-  /* this is what defines the global scale */
+ 
+  
   --baseline: 12px;
-  /* fonts */
+  
   --book-title: "Tulpen One", sans-serif;
   --title: "Cormorant Garamond", serif;
   --body: "Cormorant Garamond", serif;
@@ -439,8 +438,8 @@ left: 0;
 
 .content01 {
     display: flex;
-    justify-content: center; /* 水平对齐 */
-    align-items: center; /* 垂直对齐 */
+    justify-content: center; 
+    align-items: center; 
     height: 500px;
     width: 100%;
     margin: 0 auto;
@@ -448,10 +447,10 @@ left: 0;
 }
 
 .content01_l{
-    flex: .5; /* 平均占用父元素的宽度 */
+    flex: .5; 
     display: flex;
-    justify-content: center; /* 水平对齐 */
-    /* align-items: center;  */
+    justify-content: center;
+   
     flex-direction: column;
     text-align: left
     
@@ -502,10 +501,10 @@ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 
 .content01_r {
-    flex: .5; /* 平均占用父元素的宽度 */
+    flex: .5; 
     display: flex;
-    justify-content: center; /* 水平对齐 */
-    align-items: center; /* 垂直对齐 */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .content01_r img {
@@ -682,6 +681,85 @@ height: 800px;
 
 .icon img{
   margin: 0 10px;
+
+}
+
+
+/* ---  (RWD) --- */
+@media (max-width: 768px) {
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .hamburger-icon .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease; 
+  }
+
+
+  .drop-down-menu {
+    display: flex;
+    flex-direction: column; 
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); 
+    padding: 20px;
+    gap: 15px;
+    list-style: none;
+    transition: left 0.3s ease; 
+  }
+  .drop-down-menu.active {
+    left: 0; 
+  }
+  .drop-down-menu li:last-child {
+    margin-top: auto; 
+  }
+
+
+/* nav */
+
+.min{
+display: none;
+
+}
+
+.content01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.site-footer {
+  background-color: #0e0d0d;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-top: auto;  
+  margin-top: 1400px;
+}
 
 }
 

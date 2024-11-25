@@ -9,32 +9,32 @@
 </head>
 <body>
 
-  <nav>     
-        
-    <ul class="drop-down-menu">
-        <li><a href="./index.html">首頁</a>
-        </li>
-        <li><a href="#">主題分類</a>
-            <ul>
-                <li><a href="../html/japan.html">屍蹤</a>
-                </li>
-                <li><a href="../html/candle.html">蠟燭</a>
-                </li>
-                <!-- <li><a href="#">富江</a> -->
-                </li>
-                <!-- <li><a href="#">伊藤潤二</a> -->
-                </li>
-            </ul>
-        </li>
-        <!-- <li><a href="#">最新消息</a> -->
-        </li> 
-        <li><a href="../html/autobiography.html">關於文暐</a>
-        </li>
-        
+  <nav>
+  
+    <div class="hamburger-icon" id="hamburger-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  
+
+    <ul class="drop-down-menu" id="menu">
+      <li><a href="./index.html">首頁</a></li>
+      <li>
+        <a href="#">主題分類</a>
+        <ul>
+          <li><a href="../html/japan.html">屍蹤</a></li>
+          <li><a href="../html/candle.html">蠟燭</a></li>
+        </ul>
+      </li>
+      <li><a href="../html/autobiography.html">關於文暐</a></li>
     </ul>
+  
+   
 
   </nav>
-  <!-- nav -->
+  
+    <!-- nav -->
 
     <div class="top">
         <!-- <img src="../img/autobiography/gif.gif" alt="Description of the image" style="width: 400px;"> -->
@@ -170,5 +170,33 @@ document.addEventListener('mousemove', (e) => {
 
 
   </script>
+    
+    <script>
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const menu = document.getElementById('menu');
+      
+      hamburgerIcon.addEventListener('click', function () {
+        menu.classList.toggle('active'); 
+      });
+      
+      
+      const menuItems = document.querySelectorAll('.drop-down-menu > li');
+      menuItems.forEach(item => {
+        item.addEventListener('click', function (event) {
+          event.stopPropagation(); 
+          this.classList.toggle('active'); 
+        });
+      });
+      
+      
+      document.addEventListener('click', function (event) {
+       
+        if (!hamburgerIcon.contains(event.target) && !menu.contains(event.target)) {
+          menu.classList.remove('active'); 
+        }
+      });
+</script>
+
+
 </body>
 </html>

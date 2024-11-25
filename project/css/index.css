@@ -29,7 +29,7 @@ ul.drop-down-menu {
     
 }
 
-ul { /* 取消ul預設的內縮及樣式 */
+ul { 
     margin: 0;
     padding: 0;
     list-style: none;
@@ -53,7 +53,7 @@ ul.drop-down-menu > li:last-child {
 }
 
 ul.drop-down-menu > li {
-    float: left; /* 只有第一層是靠左對齊*/
+    float: left; 
 }
 
  ul.drop-down-menu a {
@@ -88,17 +88,17 @@ ul.drop-down-menu ul li:last-child {
     border-bottom: none;
 }
 
-ul.drop-down-menu ul ul { /*第三層以後的選單出現位置與第二層不同*/
+ul.drop-down-menu ul ul { 
     z-index: 999;
     top: 10px;
     left: 90%;
 }
 
-ul.drop-down-menu ul { /*隱藏次選單*/
+ul.drop-down-menu ul { 
     display: none;
 }
 
-ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+ul.drop-down-menu li:hover > ul {
     display: block;
 }
 
@@ -118,8 +118,8 @@ nav ul li {
 margin: 0 40px 0 0;
 position: relative;
 transition: all 0.9s ease;
-font-size: 20px; /* 放大字体 */
-font-weight: 700; /* 加粗字体 */
+font-size: 20px; 
+font-weight: 700; /
 }
 
 
@@ -128,8 +128,8 @@ opacity: .7;
 }
 
 nav ul li:hover a {
-font-size: 21px; /* 放大字体 */
-font-weight: 900; /* 加粗字体 */
+font-size: 21px; 
+font-weight: 900; /
 }
 
 nav ul li:after {
@@ -160,7 +160,7 @@ nav {
     height: 800px;
     background-size: cover;
     width: 100%;
-    height: 100vh; /* 让导航栏高度与屏幕一样高 */
+    height: 100vh; 
     display: flex;
     align-items: center;
 }
@@ -260,13 +260,13 @@ nav.ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* 将列表项水平排列 */
-    width: 100vw; /* 让导航栏宽度与屏幕一样宽 */        
+    display: flex; 
+    width: 100vw;       
 }
 
 
 nav a:hover {
-    color:#ffffff; /* 设置鼠标移入时的字体颜色 */
+    color:#ffffff; 
     /* text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* 添加鼠标移入时的白色阴影效果 */
 } */
 
@@ -274,39 +274,39 @@ nav a:hover {
 
 .ppp {
   display: flex; 
-  justify-content: center; /* 水平居中對齊 */
-  align-items: center; /* 垂直居中對齊 */
+  justify-content: center; 
+  align-items: center; 
   gap: 10px; 
   padding-bottom: 20px;
 }
 
 
     .text {
-      width: 1000px; /* 設定區塊的寬度 */
-      height: 600px; /* 設定區塊的高度 */
-      text-align: center; /* 將文字置中 */
-      color: white; /* 文字顏色為白色 */
-      background-color: rgba(0, 0, 0, 0.5); /* 設置黑色且有50%透明度的背景 */
-      padding: 20px; /* 調整內部間距 */
-      margin: 0 auto; /* 讓整個區塊水平置中 */
-      position: relative; /* 使這個區塊相對定位 */
-      z-index: 1; /* 讓此區塊位於其他元素的上層 */
-      border-radius: 15px; /* 添加圓角 */
+      width: 1000px; 
+      height: 600px;
+      text-align: center; 
+      color: white; 
+      background-color: rgba(0, 0, 0, 0.5); 
+      padding: 20px; 
+      margin: 0 auto; 
+      position: relative; 
+      z-index: 1; 
+      border-radius: 15px; 
   }
   
   .mid {
-      position: relative; /* 使這個區塊相對定位，確保其他元素的正常顯示 */
-      width: 100%; /* 設定父容器的寬度 */
-      height: 100vh; /* 設定父容器的高度 */
+      position: relative; 
+      width: 100%; 
+      height: 100vh;
       background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/index/standard/standard_10.jpg) no-repeat fixed center center / cover;
-      background-size: cover; /* 確保背景圖片覆蓋整個容器 */
+      background-size: cover; 
   }
   
   .text-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%; /* 讓文字區域垂直和水平居中 */
+      height: 100%; 
   }
   
 
@@ -315,8 +315,8 @@ nav a:hover {
 
     .text {
       padding: 150px;
-       text-align: center; /* 將文字置中 */
-       color: white; /* 文字顏色為白色 */
+       text-align: center; 
+       color: white; 
        text-align: center;
        background-color: rgba(255, 255, 255, 0.5); 
        
@@ -326,14 +326,14 @@ nav a:hover {
    .text h2 {
        font-weight: 700;
        font-size: 60px;
-       margin-bottom: 50px; /* h2 與下一個元素的間距 */
-       text-shadow: 15px 11px 2px rgba(0, 0, 0, 0.5); /* 添加白色文字的陰影 */
+       margin-bottom: 50px; 
+       text-shadow: 15px 11px 2px rgba(0, 0, 0, 0.5);
    }
    
    .text h3 {
-       margin-top: 50px; /* h3 與上一個元素的間距 */
+       margin-top: 50px; 
        margin-bottom: 50px;
-       text-shadow: 10px 7px 2px rgba(0, 0, 0, 0.5); /* 添加白色文字的陰影 */
+       text-shadow: 10px 7px 2px rgba(0, 0, 0, 0.5); 
        font-size: 25px;
        line-height: 1.8;
    }
@@ -545,7 +545,7 @@ margin: 200px auto;
 }
 
 .mid_image-text img {
-  width: 50px; /* 圖片大小可以調整 */
+  width: 50px; 
   height: 50px;
   margin-right: 10px;
 }
@@ -574,8 +574,8 @@ margin: 200px auto;
 
 
 .mid2_l {
-    flex: 6; /* 佔比 6 */
-    background-color:#0000009c;  /* 左邊子元素的背景顏色 */
+    flex: 6; 
+    background-color:#0000009c; 
     /* 其他樣式屬性 */
     display: flex;
     flex-direction: row;
@@ -589,9 +589,9 @@ margin: 200px auto;
 
 
 .mid2_r {
-    flex: 4; /* 佔比 4 */
-    background-color:#0000009c; /* 右邊子元素的背景顏色 */
-    /* 其他樣式屬性 */
+    flex: 4; 
+    background-color:#0000009c; 
+   
 }
 
 @import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
@@ -742,7 +742,7 @@ html, body {
   line-height: 1.35;
   color:#efefef;
   font-weight: 500;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3); /* 添加鼠标移入时的白色阴影效果 */
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3); 
 }
 
 .btn {
@@ -761,17 +761,17 @@ html, body {
   transition: all 0.3s ease;
   border-radius: 10px; 
   transform-origin: center;
-  box-shadow: 0 0 10px rgba(125, 4, 4, 0.5); /* 不规则阴影 */
+  box-shadow: 0 0 10px rgba(125, 4, 4, 0.5);
 }
 
 .btn:hover {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.8)); /* 渐变诡异色调 */
-  filter: brightness(1.5) contrast(1.2); /* 增加亮度和对比度 */
-  animation: distort 0.6s ease infinite; /* 加入按钮扭曲效果 */
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.8)); 
+  filter: brightness(1.5) contrast(1.2);
+  animation: distort 0.6s ease infinite; 
 }
 
 .btn:active {
-  transform: scale(0.9) rotate(-5deg) skew(5deg, 5deg); /* 点击时按钮形变 */
+  transform: scale(0.9) rotate(-5deg) skew(5deg, 5deg); 
   background-color:  rgba(0, 0, 0, 0.068);
 }
 
@@ -789,12 +789,12 @@ html, body {
 }
 
 .btn:hover::before {
-  transform: rotate(360deg); /* 悬停时光线环绕效果 */
+  transform: rotate(360deg); 
 }
 
 .btn:focus {
   outline: none;
-  animation: flicker 0.5s infinite; /* 聚焦时带有闪烁效果 */
+  animation: flicker 0.5s infinite;
 }
 
 @keyframes distort {
@@ -802,7 +802,7 @@ html, body {
     transform: scale(1) skew(0deg, 0deg);
   }
   50% {
-    transform: scale(1.05) skew(-5deg, 5deg); /* 扭曲效果 */
+    transform: scale(1.05) skew(-5deg, 5deg); /
   }
   100% {
     transform: scale(1) skew(0deg, 0deg);
@@ -816,7 +816,7 @@ html, body {
   }
   50% {
     opacity: 0.5;
-    filter: blur(2px); /* 模糊闪烁效果 */
+    filter: blur(2px); 
   }
   100% {
     opacity: 1;
@@ -873,7 +873,7 @@ html, body {
 
 .mid2_r {
     font-family: "Cairo";
-    text-align: left; /* 將文本內容靠左對齊 */
+    text-align: left;
     color: #FFF;
     display: flex;
     flex-direction: column;
@@ -886,7 +886,7 @@ html, body {
 }
 
 .mid2_r h1 {
-    /* 標題的樣式 */
+  
     text-align: left;
     padding-right: 72%;
     font-size: 40px;
@@ -956,7 +956,7 @@ html, body {
     }
 }
 
-/* styling my button */
+
 
 .white-mode {
 	text-decoration: none;
@@ -976,7 +976,7 @@ html, body {
 	color: #122;
 }
 
-/* 上面為mid2 */
+
 .site-footer {
     background-color: #0e0d0d;
     color: #fff;
